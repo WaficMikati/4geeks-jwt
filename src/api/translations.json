@@ -1,0 +1,82 @@
+{
+  "EN": {
+    "navbar": {
+      "title": "The Secret Society",
+      "private": "Private",
+      "logout": "Logout",
+      "signup": "Signup",
+      "login": "Login"
+    },
+    "home": {
+      "welcome": "Welcome!",
+      "loading": "Loading message from the backend (make sure your python 🐍 backend is running)...",
+      "message": "Welcome to my project applying full-stack JWT authentication with a protected route at '/private'.\n\nThis message comes from the backend.\n\nThis is my last excercise project of the course, and I'm beyond elated to have graduated successfuly!\n\nPlease check out my final project, MicroCode Inc, by visiting my Github Profile below.\n\nThank you!"
+    },
+    "private": {
+      "welcome": "Welcome to the Secret Society",
+      "denied": "This is not for you...",
+      "yet": "Yet...",
+      "signup_first": "Signup first...",
+      "secret_message": "You have received the Secret Message...\nProtect it...\nOr die trying..."
+    },
+    "login": {
+      "title": "Login Form",
+      "email": "Email",
+      "password": "Password",
+      "button": "Login",
+      "from_signup": "Please login with your new account"
+    },
+    "signup": {
+      "title": "Signup Form",
+      "email": "Email",
+      "password": "Password",
+      "repeat_password": "Repeat Password",
+      "button": "Submit",
+      "success": "You have signed up successfully!"
+    },
+    "footer": {
+      "made_with": "Made with",
+      "by": "by"
+    }
+  },
+  "ES": {
+    "navbar": {
+      "title": "La Sociedad Secreta",
+      "private": "Privado",
+      "logout": "Cerrar Sesión",
+      "signup": "Registrarse",
+      "login": "Iniciar Sesión"
+    },
+    "home": {
+      "welcome": "¡Bienvenido!",
+      "loading": "Cargando mensaje del backend (asegúrate de que tu backend de python 🐍 esté funcionando)...",
+      "message": "Bienvenido a mi proyecto de autenticación JWT full-stack con una ruta protegida en '/private'.\n\nEste mensaje viene del backend.\n\nEste es mi último proyecto del curso, ¡y estoy muy emocionado de haberme graduado exitosamente!\n\nPor favor, echa un vistazo a mi proyecto final, MicroCode Inc, visitando mi perfil de Github a continuación.\n\n¡Gracias!"
+    },
+    "private": {
+      "welcome": "Bienvenido a la Sociedad Secreta",
+      "denied": "Esto no es para ti...",
+      "yet": "Aún...",
+      "signup_first": "Regístrate primero...",
+      "secret_message": "Has recibido el Mensaje Secreto...\nProtégelo...\nO muere en el intento..."
+    },
+    "login": {
+      "title": "Iniciar Sesión",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "button": "Iniciar Sesión",
+      "from_signup": "Por favor inicia sesión con tu nueva cuenta"
+    },
+    "signup": {
+      "title": "Formulario de Registro",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "repeat_password": "Repetir Contraseña",
+      "button": "Enviar",
+      "success": "¡Te has registrado exitosamente!"
+    },
+    "footer": {
+      "made_with": "Hecho con",
+      "by": "por"
+    }
+  }
+}
