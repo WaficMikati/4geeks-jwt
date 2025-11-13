@@ -20,19 +20,19 @@ A full-stack web application with JWT authentication, built with React (Vite) on
 Before you begin, make sure you have the following installed on your machine:
 
 1. **Python 3.13** - [Download here](https://www.python.org/downloads/)
-   - Verify installation: \`python --version\` or \`python3 --version\`
+   - Verify installation: `python --version` or `python3 --version`
 
 2. **Node.js 20.x or higher** - [Download here](https://nodejs.org/)
-   - Verify installation: \`node --version\`
-   - npm comes with Node.js: \`npm --version\`
+   - Verify installation: `node --version`
+   - npm comes with Node.js: `npm --version`
 
 3. **PostgreSQL** - [Download here](https://www.postgresql.org/download/)
-   - Verify installation: \`psql --version\`
+   - Verify installation: `psql --version`
    - Make sure PostgreSQL server is running
 
 4. **pipenv** - Python dependency manager
-   - Install: \`pip install pipenv\` or \`pip3 install pipenv\`
-   - Verify installation: \`pipenv --version\`
+   - Install: `pip install pipenv` or `pip3 install pipenv`
+   - Verify installation: `pipenv --version`
 
 ## Local Development Setup
 
@@ -40,40 +40,40 @@ Follow these steps to get the project running on your local machine:
 
 ### 1. Clone the Repository
 
-\`\`\`bash
+```bash
 git clone <your-repository-url>
 cd jwt
-\`\`\`
+```
 
 ### 2. Set Up Environment Variables
 
 Copy the example environment file and configure it:
 
-\`\`\`bash
+```bash
 cp .env.example .env
-\`\`\`
+```
 
-Edit the \`.env\` file and update the following variables:
+Edit the `.env` file and update the following variables:
 
-\`\`\`bash
+```bash
 # Database connection (adjust if your PostgreSQL has different credentials)
 DATABASE_URL=postgresql://postgres@localhost:5432/example
 
 # Generate secure secret keys (IMPORTANT: Change these!)
 FLASK_APP_KEY="your-random-secret-key-here"
 JWT_SECRET_KEY="your-random-jwt-secret-here"
-\`\`\`
+```
 
 **To generate secure secret keys**, run:
-\`\`\`bash
+```bash
 python -c "import secrets; print(secrets.token_urlsafe(32))"
-\`\`\`
+```
 
 ### 3. Set Up PostgreSQL Database
 
 #### Option A: Using PostgreSQL CLI
 
-\`\`\`bash
+```bash
 # Connect to PostgreSQL (you may need to use your PostgreSQL superuser)
 psql -U postgres
 
@@ -82,29 +82,29 @@ CREATE DATABASE example;
 
 # Exit psql
 \q
-\`\`\`
+```
 
 #### Option B: Using createdb command
 
-\`\`\`bash
+```bash
 createdb example
-\`\`\`
+```
 
 ### 4. Install Backend Dependencies
 
-\`\`\`bash
+```bash
 # Install Python dependencies using pipenv
 pipenv install
 
 # Activate the virtual environment
 pipenv shell
-\`\`\`
+```
 
 ### 5. Initialize the Database
 
 Run database migrations to create the necessary tables:
 
-\`\`\`bash
+```bash
 # Initialize migration folder (only needed first time)
 pipenv run init
 
@@ -113,51 +113,51 @@ pipenv run migrate
 
 # Apply migrations to database
 pipenv run upgrade
-\`\`\`
+```
 
-**Note:** If migrations folder already exists, skip the \`init\` step and just run:
-\`\`\`bash
+**Note:** If migrations folder already exists, skip the `init` step and just run:
+```bash
 pipenv run migrate
 pipenv run upgrade
-\`\`\`
+```
 
 ### 6. Install Frontend Dependencies
 
 Open a new terminal window (keep the backend terminal open) and run:
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### 7. Start the Development Servers
 
 #### Terminal 1 - Backend (Flask):
 
-\`\`\`bash
+```bash
 # Make sure you're in the pipenv shell
 pipenv shell
 
 # Start the Flask server (runs on http://127.0.0.1:3001)
 pipenv run start
-\`\`\`
+```
 
-The backend API will be available at: \`http://127.0.0.1:3001\`
+The backend API will be available at: `http://127.0.0.1:3001`
 
 #### Terminal 2 - Frontend (Vite):
 
-\`\`\`bash
+```bash
 # Start the Vite development server (runs on http://localhost:3000)
 npm run dev
-\`\`\`
+```
 
-The frontend will be available at: \`http://localhost:3000\`
+The frontend will be available at: `http://localhost:3000`
 
 ### 8. Access the Application
 
 Open your browser and navigate to:
-\`\`\`
+```
 http://localhost:3000
-\`\`\`
+```
 
 The frontend will automatically connect to the backend API running on port 3001.
 
@@ -167,7 +167,7 @@ The frontend will automatically connect to the backend API running on port 3001.
 
 All backend scripts use pipenv. Run these from the project root:
 
-\`\`\`bash
+```bash
 pipenv run start          # Start Flask development server
 pipenv run init           # Initialize database migrations
 pipenv run migrate        # Generate new migration files
@@ -175,21 +175,21 @@ pipenv run upgrade        # Apply migrations to database
 pipenv run downgrade      # Rollback last migration
 pipenv run insert-test-data  # Insert test data (if command exists)
 pipenv run reset_db       # Reset database migrations
-\`\`\`
+```
 
 ### Frontend (Node/React)
 
-\`\`\`bash
+```bash
 npm run dev       # Start Vite development server
 npm run start     # Alias for dev
 npm run build     # Build for production
 npm run preview   # Preview production build
 npm run lint      # Run ESLint
-\`\`\`
+```
 
 ## Project Structure
 
-\`\`\`
+```
 jwt/
 ├── src/                      # Backend source code
 │   ├── api/
@@ -209,29 +209,29 @@ jwt/
 ├── Pipfile                  # Python dependencies
 ├── package.json             # Node dependencies
 └── vite.config.js           # Vite configuration
-\`\`\`
+```
 
 ## Common Issues and Troubleshooting
 
 ### Issue: "role does not exist" when connecting to PostgreSQL
 
-**Solution:** Make sure your \`DATABASE_URL\` in \`.env\` matches your PostgreSQL username and database name. Update it accordingly:
+**Solution:** Make sure your `DATABASE_URL` in `.env` matches your PostgreSQL username and database name. Update it accordingly:
 
-\`\`\`bash
+```bash
 DATABASE_URL=postgresql://your-postgres-username@localhost:5432/your-database-name
-\`\`\`
+```
 
 ### Issue: Port 3000 or 3001 already in use
 
 **Solution:** Kill the process using the port:
 
-\`\`\`bash
+```bash
 # Find the process
 lsof -ti:3000  # or 3001
 
 # Kill it
 kill -9 <process-id>
-\`\`\`
+```
 
 Or change the port in the configuration files.
 
@@ -239,17 +239,17 @@ Or change the port in the configuration files.
 
 **Solution:** Install pipenv:
 
-\`\`\`bash
+```bash
 pip install pipenv
 # or
 pip3 install pipenv
-\`\`\`
+```
 
 ### Issue: Database migrations failing
 
 **Solution:** Reset the migrations:
 
-\`\`\`bash
+```bash
 # Delete the migrations folder
 rm -rf migrations/
 
@@ -257,15 +257,15 @@ rm -rf migrations/
 pipenv run init
 pipenv run migrate
 pipenv run upgrade
-\`\`\`
+```
 
 ### Issue: Module not found errors in Python
 
 **Solution:** Make sure you're in the pipenv shell:
 
-\`\`\`bash
+```bash
 pipenv shell
-\`\`\`
+```
 
 Then try running your command again.
 
@@ -273,21 +273,21 @@ Then try running your command again.
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| \`DATABASE_URL\` | PostgreSQL connection string | \`postgresql://postgres@localhost:5432/example\` |
-| \`FLASK_APP_KEY\` | Secret key for Flask sessions | \`random-secret-key\` |
-| \`FLASK_APP\` | Flask app entry point | \`src/app.py\` |
-| \`FLASK_DEBUG\` | Enable Flask debug mode | \`1\` |
-| \`DEBUG\` | General debug flag | \`TRUE\` |
-| \`JWT_SECRET_KEY\` | Secret key for JWT tokens | \`random-jwt-secret\` |
-| \`VITE_BASENAME\` | Base path for React Router | \`/\` |
-| \`VITE_BACKEND_URL\` | Backend API URL for frontend | \`http://127.0.0.1:3001\` |
+| `DATABASE_URL` | PostgreSQL connection string | `postgresql://postgres@localhost:5432/example` |
+| `FLASK_APP_KEY` | Secret key for Flask sessions | `random-secret-key` |
+| `FLASK_APP` | Flask app entry point | `src/app.py` |
+| `FLASK_DEBUG` | Enable Flask debug mode | `1` |
+| `DEBUG` | General debug flag | `TRUE` |
+| `JWT_SECRET_KEY` | Secret key for JWT tokens | `random-jwt-secret` |
+| `VITE_BASENAME` | Base path for React Router | `/` |
+| `VITE_BACKEND_URL` | Backend API URL for frontend | `http://127.0.0.1:3001` |
 
 ## Development Workflow
 
 1. **Make changes to backend code** - Flask will auto-reload
 2. **Make changes to frontend code** - Vite will hot-reload
-3. **Create database model changes** - Run \`pipenv run migrate\` and \`pipenv run upgrade\`
-4. **Test your changes** - Access \`http://localhost:3000\`
+3. **Create database model changes** - Run `pipenv run migrate` and `pipenv run upgrade`
+4. **Test your changes** - Access `http://localhost:3000`
 
 ## Additional Resources
 
@@ -301,7 +301,7 @@ Then try running your command again.
 
 If you encounter any issues not covered in this README, please:
 1. Check the troubleshooting section above
-2. Review your environment variables in \`.env\`
+2. Review your environment variables in `.env`
 3. Ensure all prerequisites are properly installed
 4. Check that PostgreSQL is running
 
